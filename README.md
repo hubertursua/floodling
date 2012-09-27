@@ -28,6 +28,6 @@ $(function() {
 });
 ```
 
-# More Examples
+# Live Demo and More Examples
 
-See examples.html :)
+See the source of examples.html. You can view a live demo <a href="//hyubs.dotgeek.org/floodling/">here</a> :)
