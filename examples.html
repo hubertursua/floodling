@@ -1,0 +1,86 @@
+<style>body { font-family: Helvetica, Arial, sans-serif; font-size: 16px; } </style>
+<h1>Floodling Examples</h1>
+<form id="myForm">
+	<h3>Textbox</h3>
+	<p>
+		<input type="text" name="f1" />
+	</p>
+	<h3>Password</h3>
+	<p>
+		<input type="password" name="f2" />
+	</p>
+	<h3>Text Area</h3>
+	<p>
+		<textarea name="f3"></textarea>
+	</p>
+	<h3>Dropdown - Single Select</h3>
+	<p>
+		<select name="f4">
+			<option>boo</option>
+			<option>foo</option>
+			<option>gloo</option>
+			<option>doo</option>
+		</select>
+	</p>
+	<h3>Dropdown - Multiple Select</h3>
+	<p>
+		<select name="f5[]" multiple="multiple">
+			<option value="boo">boo</option>
+			<option value="foo">foo</option>
+			<option value="gloo">gloo</option>
+			<option value="doo">doo</option>
+		</select>
+	</p>
+	<h3>Radio Button Group</h3>
+	<p>
+		<input type="radio" name="f6" value="boo" /> boo<br />
+		<input type="radio" name="f6" value="foo" /> foo<br />
+		<input type="radio" name="f6" value="gloo" /> gloo<br />
+		<input type="radio" name="f6" value="doo" /> doo
+	</p>
+	<h3>Check Box</h3>
+	<p>
+		<input type="checkbox" name="f7a" value="boo" /> boo<br />
+		<input type="checkbox" name="f7b" value="foo" checked="checked" /> foo<br />
+		<input type="checkbox" name="f7c" value="gloo" /> gloo<br />
+		<input type="checkbox" name="f7d" value="doo" /> doo
+	</p>
+	<h3>Check Box Group</h3>
+	<p>
+		<input type="checkbox" name="f8[]" value="boo" /> boo<br />
+		<input type="checkbox" name="f8[]" value="foo" /> foo<br />
+		<input type="checkbox" name="f8[]" value="gloo" /> gloo<br />
+		<input type="checkbox" name="f8[]" value="doo" /> doo
+	</p>
+	<h3>Buttons - submit, reset, button</h3>
+	<p>
+		<input type="submit" name="f9" value="boo" />
+		<input type="reset" name="f10" value="boo" />
+		<input type="button" name="f11" value="boo" />
+	</p>
+	<h3>Image Button</h3>
+	<p>
+		<input type="image" name="f12" value="" />
+	</p>
+</form>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.floodling.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#myForm').floodling('f1', "hello");
+	$('#myForm').floodling('f2', "foo2");
+	$('#myForm').floodling('f3', "foo3");
+	$('#myForm').floodling('f4', "foo");
+	$('#myForm').floodling('f5[]', 'foo');
+	$('#myForm').floodling('f5[]', 'doo');
+	$('#myForm').floodling('f6', "foo");
+	$('#myForm').floodling('f7b', 0);
+	$('#myForm').floodling('f7d', true);
+	$('#myForm').floodling('f8[]', 'foo');
+	$('#myForm').floodling('f8[]', 'gloo');
+	$('#myForm').floodling('f9', 'doo');
+	$('#myForm').floodling('f10', 'doo');
+	$('#myForm').floodling('f11', 'doo');
+	$('#myForm').floodling('f12', 'http://www.iconfinder.com/ajax/download/png/?id=41238&s=32');
+});
+</script>
