@@ -1,3 +1,4 @@
+<title>Floodling</title>
 <style>body { font-family: Helvetica, Arial, sans-serif; font-size: 16px; } </style>
 <h1>Floodling Examples</h1>
 Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
@@ -14,7 +15,7 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 	<p>
 		<textarea name="f3"></textarea>
 	</p>
-	<h3>Dropdown - Single Select</h3>
+	<h3>Single Select (Dropdown)</h3>
 	<p>
 		<select name="f4">
 			<option>boo</option>
@@ -23,7 +24,7 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 			<option>doo</option>
 		</select>
 	</p>
-	<h3>Dropdown - Multiple Select</h3>
+	<h3>Multiple Select</h3>
 	<p>
 		<select name="f5[]" multiple="multiple">
 			<option value="boo">boo</option>
@@ -63,15 +64,22 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 	<p>
 		<input type="image" name="f12" value="" />
 	</p>
+	<p>&nbsp;</p>
+	<p>Check <a href="//github.com/hyubs/floodling">GitHub</a> for a complete list of supported form elements.</p>
 </form>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.floodling.min.js"></script>
-<script type="text/javascript">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.floodling.min.js"></script>
+<script>
 $(function() {
-	$('#myForm').floodling('f1', "hello");
-	$('#myForm').floodling('f2', "foo2");
-	$('#myForm').floodling('f3', "foo3");
-	$('#myForm').floodling('f4', "foo");
+	// You can use a JSON object
+	$('#myForm').floodling({
+		f1: "hello",
+		f2: "foo2",
+		f3: "foo3",
+		f4: "foo"
+	});
+	
+	// Or pass a name+value pair
 	$('#myForm').floodling('f5[]', 'foo');
 	$('#myForm').floodling('f5[]', 'doo');
 	$('#myForm').floodling('f6', "foo");
@@ -79,9 +87,9 @@ $(function() {
 	$('#myForm').floodling('f7d', true);
 	$('#myForm').floodling('f8[]', 'foo');
 	$('#myForm').floodling('f8[]', 'gloo');
-	$('#myForm').floodling('f9', 'doo');
-	$('#myForm').floodling('f10', 'doo');
-	$('#myForm').floodling('f11', 'doo');
-	$('#myForm').floodling('f12', 'http://www.iconfinder.com/ajax/download/png/?id=41238&s=32');
+	$('#myForm').floodling('f9', 'doos');
+	$('#myForm').floodling('f10', 'door');
+	$('#myForm').floodling('f11', 'doob');
+	$('#myForm').floodling('f12', 'http://lorempixel.com/200/200/food/');
 });
 </script>

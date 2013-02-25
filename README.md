@@ -8,26 +8,67 @@ jQuery plugin for auto-filling and selecting values
 Add it like any normal jQuery plugin.
 
 ```html
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.floodling.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.floodling.min.js"></script>
 ```
 
-# Quick Example
+# Examples
 
+## Textbox
 **HTML**
 ```html
 <form id="myForm">
-	Foo <input type="text" name="foo" />
+	Foo <input type="text" name="foo" /><br />
+	Bar <input type="text" name="bar" />
 </form>
 ```
 
 **Javascript**
 ```javascript
 $(function() {
-	$('#myForm').floodling('foo', "hello world!");
+	// Sets the value of the foo textbox to "hello world"
+	$('#myForm').floodling({
+		foo: "hello world!"
+		bar: "flooding the bar!"
+	});
 });
 ```
 
-# Live Demo and More Examples
+# Live Demo
 
-See the source of examples.html. You can view a live demo <a href="http://hyubs.dotgeek.org/floodling/">here</a> :)
+You can view a live demo <a href="http://hyubs.com/floodling/">here</a> :)
+
+# Works For
+
+Floodling can populate the following form elements:
+
+*	input
+	*	button
+	*	checkbox
+	*	color
+	*	date 
+	*	datetime 
+	*	datetime-local 
+	*	email 
+	*	file
+	*	hidden
+	*	image
+	*	month 
+	*	number 
+	*	password
+	*	radio
+	*	range 
+	*	reset
+	*	search
+	*	submit
+	*	tel
+	*	text
+	*	time 
+	*	url
+	*	week
+*	button
+	*	button
+	*	submit
+	*	reset
+*	textarea
+*	select (single and multiple)
