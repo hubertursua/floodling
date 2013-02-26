@@ -5,7 +5,7 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 <form id="myForm">
 	<h3>Textbox</h3>
 	<p>
-		<input type="text" name="f1" />
+		<input type="text" name="f1" id="myF1" />
 	</p>
 	<h3>Password</h3>
 	<p>
@@ -68,18 +68,20 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 	<p>Check <a href="//github.com/hyubs/floodling">GitHub</a> for a complete list of supported form elements.</p>
 </form>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="jquery.floodling.min.js"></script>
+<script src="jquery.floodling.js"></script>
 <script>
 $(function() {
-	// You can use a JSON object
+	// You can use a selector for the specific element
+	$('#myF1').floodling('hello');
+	
+	// Or, you can use a JSON object
 	$('#myForm').floodling({
-		f1: "hello",
 		f2: "foo2",
 		f3: "foo3",
 		f4: "foo"
 	});
 	
-	// Or pass a name+value pair
+	// Or, pass a name+value pair
 	$('#myForm').floodling('f5[]', 'foo');
 	$('#myForm').floodling('f5[]', 'doo');
 	$('#myForm').floodling('f6', "foo");
@@ -91,5 +93,6 @@ $(function() {
 	$('#myForm').floodling('f10', 'door');
 	$('#myForm').floodling('f11', 'doob');
 	$('#myForm').floodling('f12', 'http://lorempixel.com/200/200/food/');
+	
 });
 </script>
