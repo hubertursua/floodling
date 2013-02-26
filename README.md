@@ -1,29 +1,29 @@
 jQuery floodling
 =========
 
-jQuery plugin for auto-filling and selecting values
+jQuery plugin for auto-filling and selecting values of form elements.
 
-# Demo
+## Demo ##
 
-## In my sandbox
+### In my sandbox ###
 You can view a live demo <a href="http://hyubs.com/floodling/">here</a> :)
 
-## jsFiddle
+### jsFiddle ###
 Or, you can play around with the code on <a href="http://jsfiddle.net/hyubs/chm5P/">jsFiddle</a>
 
 
-# Usage
+## Usage ##
 
-## Referencing
+### Referencing ###
 Add it like any normal jQuery plugin.
 
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="jquery.floodling.min.js"></script>
 ```
-## Setting the value of a single element ##
+### Setting the value of a single element ###
 
-### With scope selector ###
+#### With scope selector ####
 You can use a scope selector for your form or div. The first parameter is the name attribute of the form element and the second attribute is the value you want to set.
 
 **Syntax**
@@ -42,7 +42,7 @@ $(__scope_selector__).floodling(__name__, __val__);
 $('#myForm').floodling('myTextbox', 'bar');
 ```
 
-### Element selector ###
+#### Element selector ####
 You can also use the selector to choose the form element and pass the value as the first parameter.
 
 **Syntax**
@@ -52,14 +52,14 @@ $(__element_selector__).floodling(__val__);
 
 **Example**
 ```html
-Foo <input type="text" name=""myTextbox" id="myText" />
+Foo <input type="text" name="myTextbox" id="myText" />
 ```
 
 ```javascript
 $('#myText').floodling('bar');
 ```
 
-## Setting the values of multiple elements ##
+### Setting the values of multiple elements ###
 
 You can set the values of multiple form elements by passing a JSON object.
 
@@ -93,7 +93,7 @@ $('#myForm').floodling({
 ```
 
 
-# Works For
+## Works For ##
 
 Floodling can populate the following form elements:
 
