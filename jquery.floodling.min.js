@@ -1,5 +1,5 @@
 /**
- * jQuery floodling v1.1.5 https://github.com/hyubs/floodling
+ * jQuery floodling v1.1.6 https://github.com/hyubs/floodling
  * Written by Hyubs Ursua
  * Copyright (c) 2013
  * Website: https://github.com/hyubs/floodling
