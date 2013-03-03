@@ -26,7 +26,7 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 	</p>
 	<h3>Multiple Select</h3>
 	<p>
-		<select name="f5[]" multiple="multiple">
+		<select name="f5[]" id="myMulti" multiple="multiple">
 			<option value="boo">boo</option>
 			<option value="foo">foo</option>
 			<option value="gloo">gloo</option>
@@ -48,7 +48,7 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 		<input type="checkbox" name="f7d" value="doo" /> doo
 	</p>
 	<h3>Check Box Group</h3>
-	<p>
+	<p id="myCBG">
 		<input type="checkbox" name="f8[]" value="boo" /> boo<br />
 		<input type="checkbox" name="f8[]" value="foo" /> foo<br />
 		<input type="checkbox" name="f8[]" value="gloo" /> gloo<br />
@@ -73,7 +73,6 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 $(function() {
 	// You can use a selector for the specific element
 	$('#myF1').floodling('hello');
-
 	// Or, you can use a JSON object
 	$('#myForm').floodling({
 		f2: "foo2",
@@ -81,18 +80,36 @@ $(function() {
 		f4: "foo"
 	});
 
-	// Or, pass a name+value pair
-	$('#myForm').floodling('f5[]', 'foo');
-	$('#myForm').floodling('f5[]', 'doo');
-	$('#myForm').floodling('f6', "foo");
+	$('#myForm').floodling('f6', 'gloo');
 	$('#myForm').floodling('f7b', 0);
 	$('#myForm').floodling('f7d', true);
-	$('#myForm').floodling('f8[]', 'foo');
-	$('#myForm').floodling('f8[]', 'gloo');
+	
 	$('#myForm').floodling('f9', 'doos');
 	$('#myForm').floodling('f10', 'door');
 	$('#myForm').floodling('f11', 'doob');
 	$('#myForm').floodling('f12', 'http://lorempixel.com/200/200/food/');
 
+	// ADDITIONAL TEST CASES
+	// MULTIPLE SELECT
+	//scope selector, JSON - selects boo, foo
+	$('#myForm').floodling({
+		'f5[]': ["boo","foo"]
+	});
+	//element selector, values only - deselects boo, selects gloo
+	$('#myMulti').floodling(['boo','gloo']);
+	//result: selected: foo, gloo
+	//scope selector, name and values - delesects foo, selects doo
+	$('#myForm').floodling('f5[]', ['foo','doo']);
+	//end result: selected: gloo, doo
+
+	// CHECKBOX
+	//scope selector: name and values - selects gloo, doo
+	$('#myForm').floodling('f8[]', ['gloo','doo']);
+	//scope selector: JSON - selects boo; deselects gloo
+	$('#myForm').floodling({
+		'f8[]': ["boo", "gloo"]
+	});
+	//result: boo, doo
+	
 });
 </script>
