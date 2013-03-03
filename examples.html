@@ -26,7 +26,7 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 	</p>
 	<h3>Multiple Select</h3>
 	<p>
-		<select name="f5[]" multiple="multiple">
+		<select name="f5[]" id="myMulti" multiple="multiple">
 			<option value="boo">boo</option>
 			<option value="foo">foo</option>
 			<option value="gloo">gloo</option>
@@ -48,11 +48,11 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 		<input type="checkbox" name="f7d" value="doo" /> doo
 	</p>
 	<h3>Check Box Group</h3>
-	<p>
-		<input type="checkbox" name="f8[]" value="boo" /> boo<br />
-		<input type="checkbox" name="f8[]" value="foo" /> foo<br />
-		<input type="checkbox" name="f8[]" value="gloo" /> gloo<br />
-		<input type="checkbox" name="f8[]" value="doo" /> doo
+	<p id="myCBG">
+		<input type="checkbox" name="f8[]" class="f8" value="boo" /> boo<br />
+		<input type="checkbox" name="f8[]" class="f8" value="foo" /> foo<br />
+		<input type="checkbox" name="f8[]" class="f8" value="gloo" /> gloo<br />
+		<input type="checkbox" name="f8[]" class="f8" value="doo" /> doo
 	</p>
 	<h3>Buttons - submit, reset, button</h3>
 	<p>
@@ -67,32 +67,61 @@ Get the source code on <a href="//github.com/hyubs/floodling">GitHub</a>!
 	<p>&nbsp;</p>
 	<p>Check <a href="//github.com/hyubs/floodling">GitHub</a> for a complete list of supported form elements.</p>
 </form>
-<script src="jquery.min.js"></script>
-<script src="jquery.floodling.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.floodling.min.js"></script>
 <script>
 $(function() {
+	// [BASIC USAGE]
+
 	// You can use a selector for the specific element
 	$('#myF1').floodling('hello');
-
-	// Or, you can use a JSON object
+	
+	// Or, select a specific form and change the values of multiple elements using a JSON object
 	$('#myForm').floodling({
 		f2: "foo2",
 		f3: "foo3",
 		f4: "foo"
 	});
 
-	// Or, pass a name+value pair
-	$('#myForm').floodling('f5[]', 'foo');
-	$('#myForm').floodling('f5[]', 'doo');
-	$('#myForm').floodling('f6', "foo");
+	// Or, select a specific form and change the value of a specific element
+	$('#myForm').floodling('f6', 'gloo');
 	$('#myForm').floodling('f7b', 0);
 	$('#myForm').floodling('f7d', true);
-	$('#myForm').floodling('f8[]', 'foo');
-	$('#myForm').floodling('f8[]', 'gloo');
 	$('#myForm').floodling('f9', 'doos');
 	$('#myForm').floodling('f10', 'door');
 	$('#myForm').floodling('f11', 'doob');
 	$('#myForm').floodling('f12', 'http://lorempixel.com/200/200/food/');
 
+	
+	// [PASSING ARRAYS FOR MULTI-VALUED ELEMENTS]
+	
+	// MULTIPLE SELECT
+	// scope selector, JSON - selects boo, foo
+	$('#myForm').floodling({
+		'f5[]': ["boo","foo"]
+	});
+	
+	// element selector, values only - deselects boo, selects gloo
+	$('#myMulti').floodling(['boo','gloo']);
+	// result: selected: foo, gloo
+	
+	// scope selector, name and values - delesects foo, selects doo
+	$('#myForm').floodling('f5[]', ['foo','doo']);
+	// end result: selected: gloo, doo
+
+	// CHECKBOX
+	// element selector, values only - selects gloo, doo
+	$('.f8').floodling(['gloo','doo']);
+	// result: selected: gloo, doo
+	
+	// scope selector: name and values - selects boo; deselects doo
+	$('#myForm').floodling('f8[]', ['boo','doo']);
+	// result: boo, gloo
+	
+	//scope selector: JSON - selects foo; deselects boo
+	$('#myForm').floodling({
+		'f8[]': ["boo", "foo"]
+	});
+	// result: foo, gloo
 });
 </script>

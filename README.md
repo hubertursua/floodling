@@ -92,6 +92,90 @@ $('#myForm').floodling({
 });
 ```
 
+### Setting multiple values of an element ###
+
+This is applicable to multiple selects and checkbox groups.
+
+Follow the same syntax as above but pass an array.
+
+#### Setting the value of a single element - With scope selector ####
+
+```html
+<form id="myForm">
+	Foo 1<br />
+	<select name="f1[]" id="myMulti" multiple="multiple">
+		<option value="boo">boo</option>
+		<option value="foo">foo</option>
+		<option value="gloo">gloo</option>
+		<option value="doo">doo</option>
+	</select><br />
+	
+	Foo 2<br />
+	<input type="checkbox" name="f2[]" value="boo" /> boo<br />
+	<input type="checkbox" name="f2[]" value="foo" /> foo<br />
+	<input type="checkbox" name="f2[]" value="gloo" /> gloo<br />
+	<input type="checkbox" name="f2[]" value="doo" /> doo
+</form>
+```
+
+```javascript
+$('#myForm').floodling('f1', ["boo", "gloo"]);
+$('#myForm').floodling('f2', ["foo", "gloo"]);
+```
+
+#### Setting the value of a single element - Element selector ####
+
+```html
+<form id="myForm">
+	Foo 1<br />
+	<select name="f1[]" id="myMulti" multiple="multiple">
+		<option value="boo">boo</option>
+		<option value="foo">foo</option>
+		<option value="gloo">gloo</option>
+		<option value="doo">doo</option>
+	</select><br />
+	
+	Foo 2<br />
+	<input type="checkbox" name="f2[]" class="f2" value="boo" /> boo<br />
+	<input type="checkbox" name="f2[]" class="f2" value="foo" /> foo<br />
+	<input type="checkbox" name="f2[]" class="f2" value="gloo" /> gloo<br />
+	<input type="checkbox" name="f2[]" class="f2" value="doo" /> doo
+</form>
+```
+
+```javascript
+$('#myForm').floodling(["boo", "gloo"]);
+$('.f2').floodling(["foo", "doo"]);
+```
+
+#### Setting the values of multiple elements ####
+
+```html
+<form id="myForm">
+	Foo 1<br />
+	<select name="f1[]" id="myMulti" multiple="multiple">
+		<option value="boo">boo</option>
+		<option value="foo">foo</option>
+		<option value="gloo">gloo</option>
+		<option value="doo">doo</option>
+	</select><br />
+	
+	Foo 2<br />
+	<input type="checkbox" name="f2[]" value="boo" /> boo<br />
+	<input type="checkbox" name="f2[]" value="foo" /> foo<br />
+	<input type="checkbox" name="f2[]" value="gloo" /> gloo<br />
+	<input type="checkbox" name="f2[]" value="doo" /> doo
+</form>
+```
+
+```javascript
+$('#myForm').floodling({
+	f1: ["boo", "gloo"],
+	f2: ["foo", "gloo"]
+});
+```
+
+
 
 ## Works For ##
 
@@ -127,3 +211,13 @@ Floodling can populate the following form elements:
 	*	reset
 *	textarea
 *	select (single and multiple)
+
+
+## License ##
+
+[MIT License](http://www.opensource.org/licenses/mit-license.php)
+
+
+## Contributors ##
+
+*	[beatobongco](https://github.com/beatobongco)
