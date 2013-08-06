@@ -33,6 +33,9 @@
 		for(var name in names) {
 			val = names[name];
 			elem = parent.find('[name="' + name + '"]');
+			if (! elem.length) {
+				elem = parent.find('#' + name);
+			}
 			setValue(parent, elem, val, name);
 		}
 	};
@@ -128,6 +131,9 @@
 				else {
 					elem.val(val);
 				}
+			}
+			else {
+				elem.html(val);
 			}
 		}
 		else {
