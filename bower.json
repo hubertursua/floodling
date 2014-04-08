@@ -1,0 +1,16 @@
+{
+	"name": "floodling",
+	"description": "jQuery plugin for auto-filling and selecting values",
+	"version": "1.1.8",
+	"main": "jquery.floodling.min.js",
+	"license": "MIT",
+	"authors": [
+        {
+            "name": "Hyubs Ursua"
+        }
+    ],
+    "homepage": "https://github.com/hyubs/floodling",
+    "dependencies": [
+        "jquery": ">= 1.9.0"
+    ]
+}
