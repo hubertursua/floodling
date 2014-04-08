@@ -1,5 +1,5 @@
 /**
- * jQuery floodling v1.1.7 https://github.com/hyubs/floodling
+ * jQuery floodling v1.1.8 https://github.com/hyubs/floodling
  * Written by Hyubs Ursua
  * Copyright (c) 2013
  * Website: https://github.com/hyubs/floodling
@@ -28,7 +28,7 @@
 			obj[arguments[0]] = arguments[1];
 			names = obj;
 			parent = $(this);
-		}		
+		}
 
 		for(var name in names) {
 			val = names[name];
@@ -36,7 +36,7 @@
 			setValue(parent, elem, val, name);
 		}
 	};
-	
+
 	function setValue(parent, elem, val, name) {
 		if(typeof elem !== 'undefined' && elem.length > 0) {
 			var tag = elem.prop("tagName").toLowerCase();
@@ -71,7 +71,7 @@
 							else {
 								cbox.prop('checked', true);
 							}
-						}					
+						}
 					}
 					else {
 						if(val != false) {
