@@ -6,7 +6,6 @@
 			var elem = arguments[0];
 			var val = arguments[1];
 			F._floodForm($(this), elem, val);
-			return $(this);
 		} else if (arguments.length === 1) {
 			if(
 				typeof arguments[0] === 'object' &&
@@ -14,12 +13,13 @@
 			) {
 				var obj = arguments[0];
 				F._floodForm($(this), obj);
-				return $(this);
 			} else {
 				var val = arguments[0];
-				return F._floodElement($(this), val);
+				F._floodElement($(this), val);
 			}
 		}
+
+		return $(this);
 	};
 
 	F._floodForm = function ($form) {
