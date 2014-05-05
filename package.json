@@ -1,10 +1,10 @@
 {
-  "name": "floodling",
+  "name": "jquery.floodling",
   "version": "2.0.0",
   "description": "jQuery plugin for auto-filling and selecting values",
   "main": "index.js",
   "directories": {
-    "lib": "dist",
+    "bin": "dist",
     "example": "examples",
     "lib": "src"
   },
@@ -20,7 +20,10 @@
     "input"
   ],
   "author": "Hyubs Ursua <hyubs.u@gmail.com>",
-  "license": "ISC",
+  "license": {
+    "type": "ISC",
+    "url": "https://github.com/hyubs/floodling/blob/master/LICENSE"
+  },
   "bugs": {
     "url": "https://github.com/hyubs/floodling/issues"
   },
