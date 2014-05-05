@@ -29,6 +29,6 @@
     "docs": "https://github.com/hyubs/floodling",
     "demo": "http://jsfiddle.net/hyubs/chm5P/",
     "dependencies": {
-        "jquery": ">=1.5"
+        "jquery": ">=1.9"
     }
 }
