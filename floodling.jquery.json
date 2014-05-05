@@ -20,8 +20,8 @@
     ],
     "licenses": [
         {
-            "type": "MIT",
-            "url": "http://www.opensource.org/licenses/mit-license.php"
+            "type": "ISC",
+            "url": "https://github.com/hyubs/floodling/blob/master/LICENSE"
         }
     ],
     "bugs": "https://github.com/hyubs/floodling/issues",

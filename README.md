@@ -109,7 +109,7 @@ Follow the same syntax as above but pass an array.
 		<option value="gloo">gloo</option>
 		<option value="doo">doo</option>
 	</select><br />
-	
+
 	Foo 2<br />
 	<input type="checkbox" name="f2[]" value="boo" /> boo<br />
 	<input type="checkbox" name="f2[]" value="foo" /> foo<br />
@@ -134,7 +134,7 @@ $('#myForm').floodling('f2', ["foo", "gloo"]);
 		<option value="gloo">gloo</option>
 		<option value="doo">doo</option>
 	</select><br />
-	
+
 	Foo 2<br />
 	<input type="checkbox" name="f2[]" class="f2" value="boo" /> boo<br />
 	<input type="checkbox" name="f2[]" class="f2" value="foo" /> foo<br />
@@ -159,7 +159,7 @@ $('.f2').floodling(["foo", "doo"]);
 		<option value="gloo">gloo</option>
 		<option value="doo">doo</option>
 	</select><br />
-	
+
 	Foo 2<br />
 	<input type="checkbox" name="f2[]" value="boo" /> boo<br />
 	<input type="checkbox" name="f2[]" value="foo" /> foo<br />
@@ -185,24 +185,24 @@ Floodling can populate the following form elements:
 	*	button
 	*	checkbox
 	*	color
-	*	date 
-	*	datetime 
-	*	datetime-local 
-	*	email 
+	*	date
+	*	datetime
+	*	datetime-local
+	*	email
 	*	file
 	*	hidden
 	*	image
-	*	month 
-	*	number 
+	*	month
+	*	number
 	*	password _(not recommended, but hey, it works!)_
 	*	radio
-	*	range 
+	*	range
 	*	reset
 	*	search
 	*	submit
 	*	tel
 	*	text
-	*	time 
+	*	time
 	*	url
 	*	week
 *	button
@@ -215,7 +215,7 @@ Floodling can populate the following form elements:
 
 ## License ##
 
-[MIT License](http://www.opensource.org/licenses/mit-license.php)
+[ISC License](https://github.com/hyubs/floodling/blob/master/LICENSE)
 
 
 ## Contributors ##
