@@ -61,73 +61,31 @@
 	};
 
 	F._setValue = function ($elem, val) {
-		var tag = ($elem.prop("tagName") + '').toLowerCase();
 		var floodlingType = $elem.attr('data-floodling-type');
 
 		if (floodlingType && typeof F._registry[floodlingType] === 'function') {
 			return F._registry[floodlingType].call($elem, val);
 		} else {
+			var tag = ($elem.prop("tagName") + '').toLowerCase();
+
 			if (tag === 'input') {
 				var type = ($elem.attr("type") + '').toLowerCase();
 
 				if (type === 'radio') {
-					return $elem.filter('[value="' + F._escapeValAttr(val) + '"]').prop("checked", true);
-				}
-				else if(type === 'checkbox') {
-					if (F.multiMode === 'floodling') {
-						var name = $elem.attr('name');
-
-						if (name && name.length > 2 && name.substring(name.length - 2, name.length) == '[]') {
-							if (val instanceof Array) {
-								for (var i in val) {
-									var $cbox = $elem.filter('[value="' + F._escapeValAttr(val[i]) + '"]');
-
-									if ($cbox) {
-										$cbox.prop('checked', !$cbox.prop('checked'));
-									}
-								}
-							} else {
-								var $cbox = $('[value="' + F._escapeValAttr(val[i]) + '"]', $elem);
-								return $cbox.prop('checked', (val));
-							}
-						} else {
-							return $elem.prop('checked', (val));
-						}
-					} else {
-						return $elem.val(val);
-					}
-				} else if(type === 'image') {
-					return $elem.prop('src', val);
+					return F._handlers.inputRadio($elem, val);
+				} else if (type === 'checkbox') {
+					return F._handlers.inputCheckbox($elem, val);
+				} else if (type === 'image') {
+					return F._handlers.inputImage($elem, val);
 				} else { // type = [text, password, submit, button, reset, date, color, etc.]
-					return $elem.val(val);
+					return F._handlers.inputOthers($elem, val);
 				}
-			} else if(tag === 'button') {
-				return $elem.html(val);
-			}
-			else if(tag === 'textarea') {
-				return $elem.val(val);
-			} else if(tag === 'select') {
-				if (F.multiMode === 'floodling') {
-					if ($elem.prop('multiple')) {
-						if (typeof val === 'string') {
-							val = [val];
-						}
-
-						if (val instanceof Array) {
-							for (var i in val) {
-								var $option = $('[value="' + F._escapeValAttr(val[i]) + '"]', $elem);
-
-								if ($option) {
-									$option.prop('selected', !$option.prop('selected'));
-								}
-							}
-						}
-					} else {
-						return $elem.val(val);
-					}
-				} else {
-					return $elem.val(val);
-				}
+			} else if (tag === 'button') {
+				return F._handlers.button($elem, val);
+			} else if (tag === 'textarea') {
+				return F._handlers.textarea($elem, val);
+			} else if (tag === 'select') {
+				return F._handlers.select($elem, val);
 			} else {
 				return F.fallback.call($elem, val);
 			}
@@ -137,9 +95,79 @@
 	F.fallback  = $.fn.val;
 	F.multiMode = 'floodling';
 	F._registry = {};
+	F._handlers = {};
 
 	F.register = function (name, func) {
 		F._registry[name] = func;
+	};
+
+	F._handlers.inputCheckbox = function ($elem, val) {
+		if (F.multiMode === 'floodling') {
+			var name = $elem.attr('name');
+
+			if (name && name.length > 2 && name.substring(name.length - 2, name.length) == '[]') {
+				if (val instanceof Array) {
+					for (var i in val) {
+						var $cbox = $elem.filter('[value="' + F._escapeValAttr(val[i]) + '"]');
+
+						if ($cbox) {
+							$cbox.prop('checked', !$cbox.prop('checked'));
+						}
+					}
+				} else {
+					var $cbox = $('[value="' + F._escapeValAttr(val[i]) + '"]', $elem);
+					return $cbox.prop('checked', (val));
+				}
+			} else {
+				return $elem.prop('checked', (val));
+			}
+		} else {
+			return $elem.val(val);
+		}
+	};
+
+	F._handlers.inputRadio = function ($elem, val) {
+		return $elem.filter('[value="' + F._escapeValAttr(val) + '"]').prop("checked", true);
+	};
+
+	F._handlers.inputImage = function ($elem, val) {
+		return $elem.prop('src', val);
+	};
+
+	F._handlers.inputOthers = function ($elem, val) {
+		return $elem.val(val);
+	};
+
+	F._handlers.button = function ($elem, val) {
+		return $elem.html(val);
+	};
+
+	F._handlers.textarea = function ($elem, val) {
+		return $elem.val(val);
+	};
+
+	F._handlers.select = function ($elem, val) {
+		if (F.multiMode === 'floodling') {
+			if ($elem.prop('multiple')) {
+				if (typeof val === 'string') {
+					val = [val];
+				}
+
+				if (val instanceof Array) {
+					for (var i in val) {
+						var $option = $('[value="' + F._escapeValAttr(val[i]) + '"]', $elem);
+
+						if ($option) {
+							$option.prop('selected', !$option.prop('selected'));
+						}
+					}
+				}
+			} else {
+				return $elem.val(val);
+			}
+		} else {
+			return $elem.val(val);
+		}
 	};
 
 	$.fn.floodling = F;
