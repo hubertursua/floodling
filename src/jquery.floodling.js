@@ -65,7 +65,7 @@
 		var floodlingType = $elem.attr('data-floodling-type');
 
 		if (floodlingType && typeof F._registry[floodlingType] === 'function') {
-			return fallback = F._registry[floodlingType].call($elem, val);
+			return F._registry[floodlingType].call($elem, val);
 		} else {
 			if (tag === 'input') {
 				var type = ($elem.attr("type") + '').toLowerCase();
