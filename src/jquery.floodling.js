@@ -1,10 +1,3 @@
-/**
- * jQuery floodling v1.1.9 https://github.com/hyubs/floodling
- * Written by Hyubs Ursua
- * Copyright (c) 2013
- * Website: https://github.com/hyubs/floodling
- * License: http://www.opensource.org/licenses/mit-license.php
- */
 (function( $ ) {
 	$.fn.floodling = function() {
 		var parent, elem, val, names, elemSelector;
