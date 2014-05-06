@@ -19,6 +19,7 @@
     "jasmine": "~2.0.0"
   },
   "ignore": [
+    "**/.*",
     "bower_components",
     "node_modules",
     "spec",
