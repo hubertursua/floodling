@@ -10,12 +10,12 @@
     "version": "2.0.0",
     "author": {
         "name": "Hyubs Ursua",
-        "url": "https://github.com/hyubs/floodling"
+        "email": "hyubs.u@gmail.com"
     },
     "maintainers": [
         {
             "name": "Hyubs Ursua",
-            "url": "http://twitter.com/hyubs"
+            "email": "hyubs.u@gmail.com"
         }
     ],
     "licenses": [
@@ -26,8 +26,8 @@
     ],
     "bugs": "https://github.com/hyubs/floodling/issues",
     "homepage": "https://github.com/hyubs/floodling",
-    "docs": "https://github.com/hyubs/floodling",
-    "demo": "http://jsfiddle.net/hyubs/chm5P/",
+    "docs": "https://github.com/hyubs/floodling/blob/master/README.md",
+    "download": "https://github.com/hyubs/floodling/blob/master/dist/jquery.floodling.min.js",
     "dependencies": {
         "jquery": ">=1.9"
     }
