@@ -213,6 +213,14 @@ Floodling can populate the following form elements:
 *	select (single and multiple)
 
 
+## Testing ##
+
+Run `npm install` and `bower install` to get all test-related modules.
+
+To run a test manually, open locally in your brower `test/index.html`.
+
+To run the headless browser test, run `npm test`.
+
 ## License ##
 
 [ISC License](https://github.com/hyubs/floodling/blob/master/LICENSE)
