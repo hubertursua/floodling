@@ -6,7 +6,8 @@
 	"license": "ISC",
 	"authors": [
         {
-            "name": "Hyubs Ursua"
+      "name": "Hyubs Ursua",
+      "email": "hyubs.u@gmail.com"
         }
     ],
     "homepage": "https://github.com/hyubs/floodling",
