@@ -1,5 +1,6 @@
-jQuery floodling
-=========
+# jQuery floodling
+
+[![Build Status](https://travis-ci.org/hyubs/floodling.svg)](https://travis-ci.org/hyubs/floodling)
 
 jQuery plugin for auto-filling and selecting values of form elements.
 
