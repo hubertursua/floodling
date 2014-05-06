@@ -1,17 +1,21 @@
 {
-	"name": "floodling",
-	"description": "jQuery plugin for auto-filling and selecting values",
-	"version": "2.0.0",
-	"main": "jquery.floodling.min.js",
-	"license": "ISC",
-	"authors": [
-        {
+  "name": "floodling",
+  "description": "jQuery plugin for auto-filling and selecting values",
+  "version": "2.0.0",
+  "main": "jquery.floodling.min.js",
+  "license": "ISC",
+  "authors": [
+    {
       "name": "Hyubs Ursua",
       "email": "hyubs.u@gmail.com"
-        }
-    ],
-    "homepage": "https://github.com/hyubs/floodling",
-    "dependencies": {
-        "jquery": ">= 1.9.0"
     }
+  ],
+  "homepage": "https://github.com/hyubs/floodling",
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  },
+  "devDependencies": {
+    "jasmine-jquery": "~2.0.3",
+    "jasmine": "~2.0.0"
+  }
 }

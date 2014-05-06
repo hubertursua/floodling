@@ -30,6 +30,12 @@
   "homepage": "https://github.com/hyubs/floodling",
   "devDependencies": {
     "grunt": "~0.4.4",
-    "grunt-contrib-uglify": "^0.4.0"
+    "grunt-contrib-uglify": "~0.4.0",
+    "zombie": "~2.0.0-alpha31",
+    "string": "~1.8.1",
+    "chalk": "~0.4.0"
+  },
+  "scripts": {
+    "test": "node test"
   }
 }
